@@ -1,21 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MenuView from "../views/MenuView.vue";
+import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
     path: "/",
-    name: "menu",
-    component: MenuView,
+    name: "home",
+    component: HomeView,
   },
-  {
-    path: "/selection",
-    name: "selection",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "selection" */ "../views/SelectionView.vue"),
-  },
+
   {
     path: "/browse",
     name: "browse",
@@ -23,9 +15,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(
-        /* webpackChunkName: "browse" */ "../views/BrowseQuestionView.vue"
-      ),
+      import(/* webpackChunkName: "browse" */ "../views/BrowseView.vue"),
   },
   {
     path: "/quiz",
@@ -35,15 +25,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
-  },
-  {
-    path: "/finish",
-    name: "finish",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "finish" */ "../views/FinishView.vue"),
   },
 ];
 
