@@ -1,21 +1,27 @@
 import { createStore } from "vuex";
+const getDefaultState = () => {
+  return {
+    items: [],
+  };
+};
 
 export default createStore({
   state() {
     return {
-      questionTopics: [],
+      questionTopics: getDefaultState(),
       numOfQuestions: 0,
     };
   },
   getters: {},
   mutations: {
     UPDATE_QUESTION_TOPICS(state, value) {
-      console.log(state.questionTopics);
       state.questionTopics = value;
-      console.log(state.questionTopics);
     },
     UPDATE_NUMOFQUESTION(state, value) {
       state.numOfQuestions = value;
+    },
+    RESET_STATE(state) {
+      Object.assign(state, getDefaultState());
     },
   },
   actions: {},

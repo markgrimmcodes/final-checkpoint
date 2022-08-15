@@ -7,7 +7,9 @@
   >
     {{ buttonText }}
   </button>
-  <router-link v-else id="finish_link" to="/"> Wanna go again?</router-link>
+  <router-link v-else id="finish_link" to="/" @click="cleanUp()">
+    Wanna go again?</router-link
+  >
 </template>
 <script>
 export default {
@@ -50,6 +52,9 @@ export default {
       } else if ((this.count = this.$store.state.numOfQuestions)) {
         (this.finishedState = true), (this.buttonText = "finish");
       }
+    },
+    cleanUp() {
+      this.$store.commit("RESET_STATE");
     },
   },
 
