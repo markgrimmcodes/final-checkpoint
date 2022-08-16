@@ -19,6 +19,7 @@ export default {
       questions: [],
       count: 1,
       finishedState: false,
+      mixedQuestions: [],
     };
   },
   computed: {
@@ -53,6 +54,7 @@ export default {
         (this.finishedState = true), (this.buttonText = "finish");
       }
     },
+
     cleanUp() {
       this.$store.commit("RESET_STATE");
     },

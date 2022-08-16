@@ -29,9 +29,15 @@
         </label>
       </li>
     </ul>
-    <router-link id="start_game" @click="loggit()" class="link" to="/quiz"
+    <router-link
+      v-if="numOfQuestions > 0 && checkedTopics.length > 0"
+      id="start_game"
+      @click="loggit()"
+      class="link"
+      to="/quiz"
       >START QUIZ</router-link
     >
+    <p v-else>Choose the amount of questions and at least one topic!</p>
   </div>
 </template>
 
